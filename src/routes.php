@@ -6,7 +6,7 @@ use Slim\Routing\RouteCollectorProxy;
 use AltchaOrg\Altcha\Altcha;
 use AltchaOrg\Altcha\ChallengeOptions;
 
-$altchaHMACKey = $_ENV['ALTCHA_HMAC_KEY'];
+$altchaHMACKey = getenv('ALTCHA_HMAC_KEY');
 
 $app->group('/', function (RouteCollectorProxy $group) use ($altchaHMACKey) {
     $group->get('', function (Request $request, Response $response) {
